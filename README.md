@@ -17,12 +17,15 @@
 - arduinoWebSockets
 - pubsubclient
 - StringUtils
-- StringUtils
 - Pairs
 
 ## Схемы
 Есп32: датчик на G3, реле на G22, кнопка на G17
+
 Есп8266: датчик на А0, реле на D4, кнопка на D5 (не проверял, но должно работать)
+![SCHEME](https://github.com/Yura4213/polivator/schemes/esp32.jpg)
+![SCHEME](https://github.com/AlexGyver/gyverString/schemes/esp8266.jpg)
+![SCHEME](https://github.com/AlexGyver/gyverString/schemes/esp32_v2.jpg)
 
 ## Версии
 - 1.0 - Релиз (не было)
@@ -30,9 +33,9 @@
 - 1.2 - добавил пароль
 
 ## Вопросы
-В: Почему реле включается и не выключается?
-О: Слабый бп. Не хватает тока
-В: Не компилируется. Ругается на нехватку библиотек
-О: Это гайверхаб. Надо доустановить arduinoWebSockets, pubsubclient, StringUtils, GSON и Pairs
-В: Ругается на ошибки в библиотеках
+В: Почему реле включается и не выключается?  
+О: Слабый бп. Не хватает тока  
+В: Не компилируется. Ругается на нехватку библиотек  
+О: Это гайверхаб. Надо доустановить arduinoWebSockets, pubsubclient, StringUtils, GSON и Pairs  
+В: Ругается на ошибки в библиотеках  
 О: Надо скачать библиотеки из архива

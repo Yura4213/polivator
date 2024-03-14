@@ -1,0 +1,26 @@
+{
+  "name": "Поливатор",
+  "about": "Автополив, можно по кнопке",
+  "version": "1.2",
+  "notes": "Добавил пароль",
+  "builds": [
+    {
+      "chipFamily": "ESP8266",
+      "parts": [
+        {
+          "path": "https://raw.githubusercontent.com/Yura4213/polivator/main/bin8266/firmware.bin",
+          "offset": 0
+        }
+      ]
+    },
+    {
+      "chipFamily": "ESP32",
+      "parts": [
+        {
+          "path": "https://raw.githubusercontent.com/Yura4213/polivator/main/bin/firmware.bin",
+          "offset": 0
+        }
+      ]
+    }
+  ]
+}
