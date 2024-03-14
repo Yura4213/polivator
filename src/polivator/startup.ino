@@ -1,5 +1,5 @@
 void startup() {
-  // я хз, хранить IPAddress в памяти приводит к exception
+  // Гайвер хз, хранить IPAddress в памяти приводит к exception
   // так что вытаскиваем в IPAddress
   /*if (data["ip0"] == "") data["ip0"] = 0;
     if (data["ip1"] == "") data["ip1"] = 0;
@@ -55,10 +55,12 @@ void startup() {
 
   // стартуем хаб
 
+  uint32_t pass_ = getPass();
   hub.mqtt.config("test.mosquitto.org", 1883);  // + MQTT
-  hub.config(F("MyDevices"), F("ESP"));
+  String name = "EKdevices" + pass_;
+  hub.config(F(name.c_str()), F("ESP"));
   hub.onBuild(build);
-  hub.setPIN(getPass());
+  hub.setPIN(pass_);
   hub.begin();
 }
 
@@ -86,6 +88,15 @@ void localPortal() {
 int getPass() {
   int hpin = random(1000, 9999);
   if (data["hubpin"] == "") data["hubpin"] = String(hashCode(String(hpin)));
+  //Serial.println(data["hubpin"]);
+  Serial.print("PIN: ");
+  uint32_t pinc = deshifr((uint32_t)data["hubpin"]);
+  Serial.println(pinc);
+  return pinc;
+}
+int newPass() {
+  int hpin = random(1000, 9999);
+  data["hubpin"] = String(hashCode(String(hpin)));
   //Serial.println(data["hubpin"]);
   Serial.print("PIN: ");
   uint32_t pinc = deshifr((uint32_t)data["hubpin"]);
@@ -138,3 +149,4 @@ uint32_t deshifr(uint32_t val) {
   //Serial.println("|");
   return atol((char*)nums2.c_str());
 }
+
