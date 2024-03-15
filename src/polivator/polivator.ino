@@ -9,9 +9,9 @@
 
 #define BTN_LEVEL 0 // eсли сенсорная - 1. А так 0
 
-#define PIN_OUT 2 // 22
-#define PIN_IN A0 // 34
-#define _BTN 14    // 17
+#define PIN_OUT 22 // 2
+#define PIN_IN 34 // A0
+#define _BTN 17    // 14
 
 #define PERIOD 1000
 #define PERIOD2 2000
