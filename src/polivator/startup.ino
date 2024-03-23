@@ -57,8 +57,7 @@ void startup() {
 
   uint32_t pass_ = getPass();
   hub.mqtt.config("test.mosquitto.org", 1883);  // + MQTT
-  String name = "EKdevices" + pass_;
-  hub.config(F(name.c_str()), F("ESP"));
+  hub.config(F("MyDevices"), F("ESP"));
   hub.onBuild(build);
   hub.setPIN(pass_);
   hub.begin();
